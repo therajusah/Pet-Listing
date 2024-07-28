@@ -11,11 +11,11 @@ const SearchResults = () => {
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
-        const animal = searchParams.get("animal");
-        const location = searchParams.get("location");
-        const breed = searchParams.get("breed");
+        const animal = searchParams.get("animal") || "";
+        const location = searchParams.get("location") || "";
+        const breed = searchParams.get("breed") || "";
         const response = await axios.get(
-          `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+          `https://cors-anywhere.herokuapp.com/http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
         );
         setPets(response.data.pets);
       } catch (error) {

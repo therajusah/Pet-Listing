@@ -15,7 +15,7 @@ const PetDetails = () => {
     const fetchPetDetails = async () => {
       try {
         const response = await axios.get(
-          `http://pets-v2.dev-apis.com/pets?id=${id}`
+          `https://cors-anywhere.herokuapp.com/http://pets-v2.dev-apis.com/pets?id=${id}`
         );
         setPet(response.data.pets[0]);
       } catch (error) {
