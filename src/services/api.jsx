@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const targetUrl = 'http://pets-v2.dev-apis.com';
+
 const api = axios.create({
-  baseURL: 'http://pets-v2.dev-apis.com',
+  baseURL: proxyUrl + targetUrl,
 });
 
 export const fetchPets = () => api.get('/pets');
